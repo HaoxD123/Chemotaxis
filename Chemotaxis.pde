@@ -1,13 +1,40 @@
- //declare bacteria variables here   
- void setup()   
+Bacteria[] hao;
+void setup()   
  {     
- 	//initialize bacteria variables here   
+   size(500,500);
+   hao = new Bacteria[500];
+   for(int i = 0; i < hao.length; i++){
+     hao[i] = new Bacteria();
+   }
  }   
  void draw()   
  {    
- 	//move and show the bacteria   
+   background(0);
+   for(int i = 0; i < hao.length; i++){
+     hao[i].show();
+     hao[i].walk();
+   }
  }  
  class Bacteria    
  {     
- 	//lots of java!   
+   int myX, myY;
+   Bacteria(){
+     myX = myY = 250;
+   }
+   void walk(){
+     myX = myX + (int)(Math.random()*7)-3;
+     myY = myY + (int)(Math.random()*7)-3;
+   }
+   void show(){
+     fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+     ellipse(myX,myY,10,10);
+   }
  }    
+ 
+ void mousePressed(){
+   
+  for(int i = 0; i < hao.length; i++){
+    hao[i] = new Bacteria();
+  }
+   
+}
