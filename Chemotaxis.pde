@@ -1,7 +1,7 @@
 Bacteria[] hao;
 void setup()   
  {     
-   size(500,500);
+   size(800,800);
    hao = new Bacteria[500];
    for(int i = 0; i < hao.length; i++){
      hao[i] = new Bacteria();
@@ -19,11 +19,11 @@ void setup()
  {     
    int myX, myY;
    Bacteria(){
-     myX = myY = 250;
+     myX = myY = 400;
    }
    void walk(){
-     myX = myX + (int)(Math.random()*7)-3;
-     myY = myY + (int)(Math.random()*7)-3;
+     myX = myX + (int)(Math.random()*9)-4;
+     myY = myY + (int)(Math.random()*9)-4;
    }
    void show(){
      fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
